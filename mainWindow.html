@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script>
+            const electron = require("electron");
+            const { ipcRenderer } = electron;
+            ipcRenderer.on('item:receive', function(e, item) {
+                document.getElementById('value').innerHTML = item;
+            }); 
+            ipcRenderer.on('item:clear', function() {
+                document.getElementById('value').innerHTML = '';
+            });  
+        </script>
+    </head>
+    <body>
+        <h1>Test Window</h1>
+        <span id="value"></span>
+    </body>
+</html>

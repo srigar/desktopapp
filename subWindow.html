@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <script>
+            const electron = require('electron');
+            const { ipcRenderer } = electron;
+            
+            function buttonClick() {
+                ipcRenderer.send('item:send', 'Test Value');
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Sub Window</h2>
+        <button onclick="buttonClick()">Submit</button>
+    </body>
+</html>
